@@ -12,9 +12,10 @@ import 'package:get_storage/get_storage.dart';
 
 class OfflineAirportListData extends StatelessWidget {
   OfflineAirportListData({super.key});
-  List<AirportDataResponseModel> airportsList =   GetStorage().read('airportData');
+  List<AirportDataResponseModel> airportsList = GetStorage().read('airportData');
   @override
   Widget build(BuildContext context) {
+    // print('Dharti--->$airportsList');
     return SafeArea(
       child: Scaffold(
           appBar: commonAppBar(context, title: AppStrings.airportsOffline,isAirportScreen: false),

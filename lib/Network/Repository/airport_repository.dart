@@ -9,35 +9,18 @@ class AirportRepository {
   static var customDio = CustomDio();
   static dynamic client;
 
-
-  static GetStorage box = GetStorage();
-
   static Future<List<AirportDataResponseModel>> fetchAllData() async {
     List<AirportDataResponseModel> airports = [];
-
     try {
       client = await customDio.getDio();
       var response = await client.get(HttpConstants.airportUrl);
       if (response.statusCode == 200) {
-        String jsonData =
-            response.data; // Assuming the API returns a JSON string
+        String jsonData = response.data; // Assuming the API returns a JSON string
         Map<String, dynamic> data = jsonDecode(jsonData);
-        // box.write('airportData', data);
-
-        // final jsonString = box.read('airportData');
-        // if (jsonString != null) {
-        //   final airportResponseModel =
-        //   AirportResponseModel.fromJson(jsonDecode(jsonString));
-        //   print(airportResponseModel.toJson());
-        // } else {
-        //   print('Data not found.');
-        // }
-
         data.forEach((key, value) {
           airports.add(AirportDataResponseModel.fromJson(value));
         });
 
-        box.write('airportData', airports);
         return airports;
       } else {
         return List<AirportDataResponseModel>.empty();

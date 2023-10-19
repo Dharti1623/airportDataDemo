@@ -6,10 +6,7 @@ class NetworkBinding extends Bindings{
   NetworkBinding();
   @override
   void dependencies() {
-    // Get.lazyPut<NetworkManager>(() => NetworkManager());
-    // Get.lazyPut<NetworkManager>(() => NetworkManager());
     Get.lazyPut<AirportViewModel>(() => AirportViewModel(),fenix: true);
-    Get.lazyPut<NetworkManager>(() => NetworkManager(),fenix: true);
-
+    Get.lazyPut<NetworkManager>(() => NetworkManager());
   }
 }
