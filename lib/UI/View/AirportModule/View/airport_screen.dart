@@ -16,11 +16,15 @@ class AirportScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: commonAppBar(context, title: AppStrings.airports,isAirportScreen: true),
+          appBar: commonAppBar(context, title: AppStrings.airports),
           body: Obx(
             () => airportViewModel.onError.isTrue
-                ?  Center(
-                    child: Icon(Icons.delete_outline_sharp, size: 200,color: AppColor().primaryColor(context),),
+                ? Center(
+                    child: Icon(
+                      Icons.delete_outline_sharp,
+                      size: 200,
+                      color: AppColor().primaryColor(context),
+                    ),
                   )
                 : airportViewModel.isLoading.value == true
                     ? const CustomLoader()

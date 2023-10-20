@@ -1,18 +1,9 @@
-import 'package:airports/UI/View/AirportModule/View/offline_airport_list_data.dart';
 import 'package:airports/Utils/Constants/color_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-commonAppBar(BuildContext context, {required String title, required bool isAirportScreen}) {
+commonAppBar(BuildContext context, {required String title}) {
   return AppBar(
     title: Text(title),
-    actions: [
-      isAirportScreen ? IconButton(
-          onPressed: () {
-            Get.to(()=>OfflineAirportListData());
-          },
-          icon: const Icon(Icons.add)) : SizedBox()
-    ],
     iconTheme: IconThemeData(color: AppColor().onPrimaryColor(context)),
     centerTitle: true,
     titleTextStyle:

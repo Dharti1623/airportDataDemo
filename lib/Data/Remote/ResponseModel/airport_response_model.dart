@@ -5,16 +5,14 @@ class AirportResponseModel {
 
   AirportResponseModel.fromJson(Map<dynamic, dynamic> json) {
     airportDataResponseModel = json['$airportDataResponseModel'] != null
-        ? AirportDataResponseModel.fromJson(
-        json['$airportDataResponseModel'])
+        ? AirportDataResponseModel.fromJson(json['$airportDataResponseModel'])
         : null;
   }
 
   Map<dynamic, dynamic> toJson() {
     final Map<dynamic, dynamic> data = <dynamic, dynamic>{};
     if (airportDataResponseModel != null) {
-      data['$airportDataResponseModel'] =
-          airportDataResponseModel!.toJson();
+      data['$airportDataResponseModel'] = airportDataResponseModel!.toJson();
     }
     return data;
   }
@@ -34,15 +32,15 @@ class AirportDataResponseModel {
 
   AirportDataResponseModel(
       {this.icao,
-        this.iata,
-        this.name,
-        this.city,
-        this.state,
-        this.country,
-        this.elevation,
-        this.lat,
-        this.lon,
-        this.tz});
+      this.iata,
+      this.name,
+      this.city,
+      this.state,
+      this.country,
+      this.elevation,
+      this.lat,
+      this.lon,
+      this.tz});
 
   AirportDataResponseModel.fromJson(Map<dynamic, dynamic> json) {
     icao = json['icao'];
@@ -72,4 +70,3 @@ class AirportDataResponseModel {
     return data;
   }
 }
-

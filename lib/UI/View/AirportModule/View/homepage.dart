@@ -1,5 +1,6 @@
 import 'package:airports/Config/Services/network_manager.dart';
 import 'package:airports/UI/View/AirportModule/View/airport_screen.dart';
+import 'package:airports/UI/View/AirportModule/View/offline_airport_list_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,16 +12,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var internetData = Get.find<NetworkManager>().obs;
+  final internetData = Get.find<NetworkManager>();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: AirportScreen()/*Obx(() {
-        return internetData.value.connectionType.value == 0
-              ? const Text('no internet')
-              : AirportScreen();
-      })*/
+      child: GetBuilder<NetworkManager>(
+          builder: (builder) => internetData.connectionType.value == 0
+              ? const OfflineAirportListData()
+              : AirportScreen()),
     );
   }
 }

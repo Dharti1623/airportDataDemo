@@ -4,8 +4,6 @@ class AppStrings {
   static String airportsOffline = 'Offline Airports Data';
   static String name = 'Name';
 
-
-
   ///Airport Detail Screen Constants
   static String pleaseTryAgain = 'Please Try Again';
   static String id_ = 'Id_';
@@ -15,9 +13,4 @@ class AppStrings {
   static String state = 'State';
   static String timeZone = 'TimeZone';
   static String close = 'Close';
-
-
-
-
-
 }

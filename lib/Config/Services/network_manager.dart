@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -36,17 +37,20 @@ class NetworkManager extends GetxController {
     switch (result) {
       case ConnectivityResult.wifi:
         connectionType.value = 1;
+        update();
         break;
       case ConnectivityResult.mobile:
         connectionType.value = 2;
-
+        update();
         break;
       case ConnectivityResult.none:
         connectionType.value = 0;
+        update();
         break;
       default:
-        print('Failed to get connection type');
-        // showSnackBar(title: 'Error', message: 'Failed to get connection type');
+        if (kDebugMode) {
+          print('Failed to get connection type');
+        }
         break;
     }
   }

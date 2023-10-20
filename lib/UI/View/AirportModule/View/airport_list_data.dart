@@ -12,7 +12,7 @@ class AirportListData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.to(() => AirPortDetails(airportData : airportData)),
+      onTap: () => Get.to(() => AirPortDetails(airportData: airportData)),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 2.0),
         child: Card(
@@ -22,10 +22,10 @@ class AirportListData extends StatelessWidget {
             child: Column(
               children: [
                 AirportDataRow(
-                    string1: '${AppStrings.name} : ${airportData.name ?? ""}',
+                    string1: '${AppStrings.name} : ${airportData.name ?? ''}',
                     string2: airportData.icao ?? ""),
                 AirportDataRow(
-                    string1: '${airportData.city}, ${airportData.state}' ?? "",
+                    string1: '${airportData.city}, ${airportData.state}',
                     string2: airportData.country ?? ""),
               ],
             ),
