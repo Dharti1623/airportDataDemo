@@ -2,40 +2,6 @@
 
 A demo which contain API call,Google map view, offline support, local database/storage,  with GetX framework.
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airport Data Demo App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        h2 {
-            color: #555;
-        }
-
-        p {
-            color: #666;
-        }
-
-        a {
-            color: #007BFF;
-        }
-    </style>
-</head>
-
-<body>
-
     <h1>Airport Data Demo</h1>
 
     <h2>Project Description</h2>
@@ -63,10 +29,6 @@ A demo which contain API call,Google map view, offline support, local database/s
 
     <h3>Demo Video:</h3>
     <video width="640" height="360" controls>
-        <source src="assets/demo_video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        <source src="assets/screenrecording/screen_recording.mov" type="video/mp4">
     </video>
 
-</body>
-
-</html>
